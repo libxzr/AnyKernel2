@@ -105,16 +105,7 @@ on enable-low-power
     write /sys/module/msm_thermal/core_control/enabled 1
 
     # Input boost configuration
-    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
-    write /sys/module/cpu_boost/parameters/input_boost_freq 0:729600
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1:0
-    write /sys/module/cpu_boost/parameters/input_boost_freq 2:940800
-    write /sys/module/cpu_boost/parameters/input_boost_freq 3:0 
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:729600"
-    write /sys/module/cpu_boost/parameters/input_boost_freq "1:0"
-    write /sys/module/cpu_boost/parameters/input_boost_freq "2:940800"
-    write /sys/module/cpu_boost/parameters/input_boost_freq "3:0"
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:729600  1:0 2:940800 3:0"
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 0
     chmod 0644 /sys/module/cpu_boost/parameters/input_boost_ms
     write /sys/module/cpu_boost/parameters/input_boost_ms 35
 
