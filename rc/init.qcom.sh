@@ -83,7 +83,6 @@ if [ $MemTotal -lt 3000000 ]; then
    echo 1 > /sys/kernel/mm/ksm/run
 else
    echo 0 > /sys/kernel/mm/ksm/run
-fi
 
 if [ -f /data/system/users/0/settings_global.xml ] && [ `getprop ro.build.version.sdk` -ge 28 ]; then
     sed -i 's/"multi_sim_data_call" value="1"/"multi_sim_data_call" value="-1"/g' /data/system/users/0/settings_global.xml
