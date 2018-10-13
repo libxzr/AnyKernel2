@@ -33,7 +33,6 @@ on charger
     start thermal-engine
 
 on enable-low-power
-    write /sys/devices/virtual/touch/tp_dev/gesture_on 1
     # Set ioscheduler
     setprop sys.io.scheduler "cfq"
 
