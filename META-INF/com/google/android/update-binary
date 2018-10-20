@@ -201,6 +201,7 @@ cd /tmp/LibXZR;
 unzip -o "$ZIPFILE";
 
 ui_print "Installing cpu profiles...";
+ui_print " ";
 
 mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.bak
 
