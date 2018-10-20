@@ -206,10 +206,6 @@ mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.b
 
 cp -rf /tmp/LibXZR/rc/init.qcom.power.rc /vendor/etc/init/hw;
 
-cp -rf /tmp/LibXZR/rc/init.qcom.sh /vendor/bin;
-
-chmod 755 /vendor/bin/init.qcom.sh;
-
 chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
 
 if [ -e /vendor/etc/thermal-engine.conf ];then
@@ -227,6 +223,16 @@ cp -rf /tmp/LibXZR/rc/thermal-engine.conf /system/etc;
 chmod 0644 /system/etc/thermal-engine.conf;
 
 fi;
+ui_print "Checking for VOLTE...";
+ui_print " ";
+
+if [ -e /vendor/bin/init.qcom.sh ]
+then
+grep -q "multi_sim_data_call" /vendor/bin/init.qcom.sh && cp -f /tmp/LibXZR/rc/init.qcom.haxvolte.sh /vendor/bin/init.qcom.sh && ui_print "VOLTE hax installed" || cp -f /tmp/LibXZR/rc/init.qcom.sh /vendor/bin && ui_print "No need for VOLTE hax"
+else
+cp -f /tmp/LibXZR/rc/init.qcom.sh /vendor/bin;
+fi
+chmod 755 /vendor/bin/init.qcom.sh;
 
 rm -rf /tmp/LibXZR
 
