@@ -20,6 +20,6 @@
 /dev/block/bootdevice/by-name/modem                          /firmware         vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337        wait
 /dev/block/bootdevice/by-name/bluetooth                      /bt_firmware      vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=222,fmask=333     wait
 /dev/block/bootdevice/by-name/misc                           /misc             emmc    defaults                                                                                             defaults
-/dev/block/zram0                                             none              swap    defaults                                                                                             zramsize=786432000,max_comp_streams=4
+/dev/block/zram0                                             none              swap    defaults                                                                                             zramsize=891289600,max_comp_streams=4
 
 /devices/soc/6a00000.ssusb/6a00000.dwc3/xhci-hcd.0.auto/usb* auto              auto    defaults                                                                                             voldmanaged=usbdisk:auto
