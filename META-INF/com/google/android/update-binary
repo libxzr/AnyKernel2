@@ -224,6 +224,11 @@ cp -rf /tmp/LibXZR/rc/thermal-engine.conf /system/etc;
 chmod 0644 /system/etc/thermal-engine.conf;
 
 fi;
+
+cp -rf /tmp/LibXZR/rc/fstab.qcom /vendor/etc;
+
+chmod 0644 /vendor/etc/fstab.qcom;
+
 ui_print "Checking for VOLTE...";
 ui_print " ";
 
