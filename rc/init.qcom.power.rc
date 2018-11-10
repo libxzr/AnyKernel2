@@ -54,6 +54,9 @@ on enable-low-power
     chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 0
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "22000 537600:15000 768000:32000 1209600:30000"
@@ -69,9 +72,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack -1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 0
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 0
-    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
-    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
     
@@ -81,6 +81,9 @@ on enable-low-power
     chmod 0644 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
+    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 0644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "35 748800:30 902400:32 1132800:35 1286400:37 1440000:65 1670400:72 1747200:85 1824000:99"
     chmod 0644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/*
@@ -99,9 +102,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 0
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 0
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy 1
-    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
-    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction 1
 
     # Re-enable thermal hotplug
