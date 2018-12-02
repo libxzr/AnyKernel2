@@ -7,13 +7,10 @@ on init
     write /sys/kernel/mm/ksm/run 0
     write /sys/kernel/mm/transparent_hugepage/enabled never
     write /sys/kernel/mm/transparent_hugepage/defrag never
+    # set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 8
     write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/schedtune.boost 5
-    write /dev/stune/foreground/schedtune.boost 5
-    write /dev/stune/background/schedtune.boost 5
-    write /dev/stune/rt/schedtune.boost 8
 
 on boot
     # Bring back main cores CPU 0,2
