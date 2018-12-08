@@ -167,7 +167,7 @@ on enable-low-power
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-2
     write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-1
 
 	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
 	write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
