@@ -263,4 +263,34 @@ test "$savedpre" && export LD_PRELOAD="$savedpre";
 
 umount_all;
 
+ui_print " ";
+ui_print " ";
+ui_print "Mounting /vendor";
+mkdir /vendor;
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/factory /vendor;
+
+ui_print " ";
+ui_print "Mounting /system";
+ui_print " ";
+mkdir /system;
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/system /system;
+
+mkdir -p /tmp/LibXZR;
+cd /tmp/LibXZR;
+unzip -o "$ZIPFILE";
+
+ui_print "Installing cpu profiles...";
+ui_print " ";
+
+cp -rf /tmp/LibXZR/patches/init.qcom.power.rc /vendor/etc/init/hw;
+chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
+
+sed -i "s/zramsize=536870912/zramsize=786432000/g" /vendor/etc/fstab.qcom
+sed -i "s#/by-name/vendor#/by-name/factory#g" /vendor/etc/fstab.qcom
+
+#Gib fphal higher priority
+sed -i "s/system-background/top-app/g" "/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc"
+
+rm -rf /tmp/LibXZR
+
 ui_print " " " " "Done!";
